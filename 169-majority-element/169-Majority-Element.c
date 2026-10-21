@@ -7,9 +7,11 @@ int majorityElement(int* nums, int numsSize) {
     int count = 0;
     for (int i = 0; i < numsSize; i++) {
         count++;
-        if (i == numsSize - 1 || nums[i] != nums[i + 1])
+        if (i == numsSize - 1 || nums[i] != nums[i + 1]) {
             if (count > numsSize / 2)
                 return nums[i];
+            else count = 0;
+        }
     }
     return 0;
 }
