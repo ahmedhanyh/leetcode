@@ -33,4 +33,4 @@
 
 ---
 
-**My Solution:** [169-Majority-Element.c](./169-Majority-Element.c)
+**My Solution:** [169-Majority-Element.py](./169-Majority-Element.py)
