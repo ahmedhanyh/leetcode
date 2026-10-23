@@ -1,1 +1,2 @@
-# My submissions to LeetCode problems
+# My LeetCode Progress
+My solutions to Leetcode problems.
