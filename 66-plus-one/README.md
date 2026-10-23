@@ -53,4 +53,4 @@ Thus, the result should be [1,0].
 
 ---
 
-**My Solution:** [66-Plus-One.c](./66-Plus-One.c)
+**My Solution:** [66-Plus-One.py](./66-Plus-One.py)
