@@ -45,4 +45,4 @@
 
 ---
 
-**My Solution:** [9-Palindrome-Number.c](./9-Palindrome-Number.c)
+**My Solution:** [9-Palindrome-Number.py](./9-Palindrome-Number.py)
