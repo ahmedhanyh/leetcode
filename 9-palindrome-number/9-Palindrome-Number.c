@@ -1,11 +1,29 @@
 bool isPalindrome(int x) {
-    char x_str[12];
-    int n = snprintf(x_str, 12, "%d", x);
+    if (x < 0) return false;
+    if (x < 10) return true;
 
-    for (int start = 0, end = n - 1; start <= end; start++, end--) {
-        if (x_str[start] != x_str[end]) {
-            return false;
-        }
+    int digits[10];
+    int top = 0;
+
+    int len = 0, xCopy = x;
+    while (xCopy) {
+        xCopy /= 10;
+        len++;
     }
+
+    for (int i = 0; i < len / 2; i++) {
+        digits[top++] = x % 10;
+        x /= 10;
+    }
+
+    // remove middle digit for odd-length x
+    if (len % 2) x /= 10;
+
+    for (int i = 0; i < len / 2; i++) {
+        if (digits[--top] != (x % 10))
+            return false;
+        x /= 10;
+    }
+
     return true;
 }
