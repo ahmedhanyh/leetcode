@@ -65,4 +65,4 @@
 
 ---
 
-**My Solution:** [290-Word-Pattern.py](./290-Word-Pattern.py)
+**My Solution:** [290-Word-Pattern.c](./290-Word-Pattern.c)
