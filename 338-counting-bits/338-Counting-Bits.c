@@ -3,9 +3,10 @@
  */
 int countOneBits(int n) {
     int bits = 0;
-    while (n) {
-        bits += n % 2;
-        n /= 2;
+    int shiftAmount = 0;
+    while ((1 << shiftAmount) <= n) {
+        bits += n & (1 << shiftAmount) ? 1 : 0;
+        shiftAmount++;
     }
     return bits;
 }
