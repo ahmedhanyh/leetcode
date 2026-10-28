@@ -17,5 +17,6 @@ bool isHappy(int n) {
         numbersSize++;
         numbers = reallocarray(numbers, numbersSize, sizeof(int));
     }
+    free(numbers);
     return true;
 }
