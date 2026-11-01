@@ -10,18 +10,17 @@
 int guess(int num);
 
 int guessNumber(int n){
-    srand(time(NULL));
-    int min = 1, max = n;
-    int myGuess;
+    int low, myGuess, high;
+    low = 1;
+    high = n;
     while (1) {
-        // generate a random number (guess) between min and max
-        myGuess = (rand() % (max - min + 1)) + min;
+        myGuess = ((high - low) / 2) + low;
         // if guess is higher than pick
         if (guess(myGuess) == -1)
-            max = myGuess - 1;
+            high = myGuess - 1;
         // else if guess is lower than pick
         else if (guess(myGuess) == 1)
-            min = myGuess + 1;
+            low = myGuess + 1;
         else break;
     }
     return myGuess;
