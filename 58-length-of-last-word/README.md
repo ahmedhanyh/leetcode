@@ -47,4 +47,4 @@
 
 ---
 
-**My Solution:** [58-Length-of-Last-Word.c](./58-Length-of-Last-Word.c)
+**My Solution:** [58-Length-of-Last-Word.py](./58-Length-of-Last-Word.py)
