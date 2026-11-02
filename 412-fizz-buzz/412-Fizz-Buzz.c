@@ -3,19 +3,17 @@
  */
 char** fizzBuzz(int n, int* returnSize) {
     char **result = malloc(n * sizeof(char *));
-    char *fizzBuzzStr;
     for (int i = 1; i <= n; i++) {
-        fizzBuzzStr = malloc(10 * sizeof(char));
+        result[i - 1] = malloc(10 * sizeof(char));
         if (i % 3 == 0 && i % 5 == 0) {
-            strcpy(fizzBuzzStr, "FizzBuzz");
+            strcpy(result[i - 1], "FizzBuzz");
         } else if (i % 3 == 0) {
-            strcpy(fizzBuzzStr, "Fizz");
+            strcpy(result[i - 1], "Fizz");
         } else if (i % 5 == 0) {
-            strcpy(fizzBuzzStr, "Buzz");
+            strcpy(result[i - 1], "Buzz");
         } else {
-            sprintf(fizzBuzzStr, "%d", i);
+            sprintf(result[i - 1], "%d", i);
         }
-        result[i - 1] = fizzBuzzStr;
     }
     *returnSize = n;
     return result;
