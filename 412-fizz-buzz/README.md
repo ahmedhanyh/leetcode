@@ -36,4 +36,4 @@
 
 ---
 
-**My Solution:** [412-Fizz-Buzz.c](./412-Fizz-Buzz.c)
+**My Solution:** [412-Fizz-Buzz.py](./412-Fizz-Buzz.py)
