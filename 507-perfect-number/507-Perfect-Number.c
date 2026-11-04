@@ -1,8 +1,9 @@
 bool checkPerfectNumber(int num) {
-    int sumDivisors = 0;
-    for (int d = 1; d <= num / 2; d++) {
+    if (num == 1) return false;
+    int sumDivisors = 1;
+    for (int d = 2; d * d < num; d++) {
         if (num % d == 0)
-            sumDivisors += d;
+            sumDivisors += d + (num / d);
     }
     return num == sumDivisors;
 }
