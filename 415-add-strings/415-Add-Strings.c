@@ -1,9 +1,3 @@
-int addDigits(int digit1, int digit2, int* carry) {
-    int sum = digit1 + digit2 + *carry;
-    *carry = (sum / 10) % 10;
-    return sum % 10;
-}
-
 char* addStrings(char* num1, char* num2) {
     if (!*num1 || !*num2) return NULL;
 
@@ -21,8 +15,9 @@ char* addStrings(char* num1, char* num2) {
     while (i >= 0 || j >= 0) {
         digit1 = i < 0 ? 0 : num1[i] - '0';
         digit2 = j < 0 ? 0 : num2[j] - '0';
-        sum = addDigits(digit1, digit2, &carry);
-        result[current--] = '0' + sum;
+        sum = digit1 + digit2 + carry;
+        result[current--] = '0' + sum % 10;
+        carry = sum / 10;
         if (i <= 0 && j <= 0) result[current--] = '0' + carry;
         i--, j--;
     }
