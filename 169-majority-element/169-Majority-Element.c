@@ -5,12 +5,11 @@ int getIndex(int num) {
 
 int majorityElement(int* nums, int numsSize) {
     int majorityCount = numsSize / 2;
-    int countTable[100001] = { 0 };
+    int countTable[100001] = { 0 }, index;
     for (int i = 0; i < numsSize; i++) {
-        countTable[getIndex(nums[i])]++;
-    }
-    for (int i = 0; i < numsSize; i++) {
-        if (countTable[getIndex(nums[i])] > majorityCount)
+        index = getIndex(nums[i]);
+        countTable[index]++;
+        if (countTable[index] > majorityCount)
             return nums[i];
     }
     return -1;
