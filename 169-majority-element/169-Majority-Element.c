@@ -1,17 +1,17 @@
-int cmp(const void *a, const void *b) {
-    return *((int *)a) - *((int *)b);
+int getIndex(int num) {
+    if (num < 0) return (num * -1) % 50000;
+    else return num % 50000 + 50000;
 }
 
 int majorityElement(int* nums, int numsSize) {
-    qsort(nums, numsSize, sizeof(int), cmp);
-    int count = 0;
+    int majorityCount = numsSize / 2;
+    int countTable[100001] = { 0 };
     for (int i = 0; i < numsSize; i++) {
-        count++;
-        if (i == numsSize - 1 || nums[i] != nums[i + 1]) {
-            if (count > numsSize / 2)
-                return nums[i];
-            else count = 0;
-        }
+        countTable[getIndex(nums[i])]++;
     }
-    return 0;
+    for (int i = 0; i < numsSize; i++) {
+        if (countTable[getIndex(nums[i])] > majorityCount)
+            return nums[i];
+    }
+    return -1;
 }
