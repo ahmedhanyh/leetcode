@@ -58,4 +58,4 @@
 
 ---
 
-**My Solution:** [1-Two-Sum.c](./1-Two-Sum.c)
+**My Solution:** [1-Two-Sum.py](./1-Two-Sum.py)
