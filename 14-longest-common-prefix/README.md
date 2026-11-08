@@ -38,4 +38,4 @@
 
 ---
 
-**My Solution:** [14-Longest-Common-Prefix.py](./14-Longest-Common-Prefix.py)
+**My Solution:** [14-Longest-Common-Prefix.c](./14-Longest-Common-Prefix.c)
