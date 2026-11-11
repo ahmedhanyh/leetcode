@@ -1,15 +1,8 @@
 int countSegments(char* s) {
-    int numSegments = 0, inSegment = 0;
-    while (*s) {
-        if (*s == ' ') {
-            if (inSegment) {
-                inSegment = 0;
-            }
-        } else if (!inSegment) {
-            inSegment = 1;
+    int numSegments = 0;
+    for (int i = 0; s[i]; i++) {
+        if (s[i] != ' ' && (i == 0 || s[i - 1] == ' '))
             numSegments++;
-        }
-        s++;
     }
     return numSegments;
 }
