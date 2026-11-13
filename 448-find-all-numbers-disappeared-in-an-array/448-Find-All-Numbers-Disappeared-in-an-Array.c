@@ -3,17 +3,14 @@
  */
 int* findDisappearedNumbers(int* nums, int numsSize, int* returnSize) {
     int* result = malloc(numsSize * sizeof(int));
-    int count[numsSize + 1], resultSize = 0;
-    for (int i = 0; i <= numsSize; i++) {
-        count[i] = 0;
-    }
+    int resultSize = 0;
+    int appeared[100001] = { 0 };
     for (int i = 0; i < numsSize; i++) {
-        count[nums[i]]++;
+        appeared[nums[i]] = 1;
     }
-    for (int i = 1; i <= numsSize; i++) {
-        if (count[i] == 0) {
-            result[resultSize++] = i;
-        }
+    for (int num = 1; num <= numsSize; num++) {
+        if (!appeared[num])
+            result[resultSize++] = num;
     }
     *returnSize = resultSize;
     return result;
