@@ -1,28 +1,21 @@
+bool isPalindrome(char *s, int l, int r) {
+    while (l < r && s[l] == s[r])
+			l++, r--;
+    if (l >= r) return true;
+    return false;
+}
+
 bool validPalindrome(char *s) {
-	int length, left, right;
-	int diffLeft, diffRight;
-	length = strlen(s);
+	int left, right;
 	left = 0;
-	right = length - 1;
+	right = strlen(s) - 1;
 	while (left < right && s[left] == s[right]) {
 		left++; right--;
 	}
 	if (left >= right) {
 		return true;
 	} else {
-        // skip char on the left
-		diffLeft = left + 1;
-		diffRight = right;
-		while (diffLeft < diffRight && s[diffLeft] == s[diffRight])
-			diffLeft++, diffRight--;
-		if (diffLeft >= diffRight) return true;
-        
-        // skip char on the right
-		diffLeft = left;
-		diffRight = right - 1;
-		while (diffLeft < diffRight && s[diffLeft] == s[diffRight])
-			diffLeft++, diffRight--;
-		if (diffLeft >= diffRight) return true;
+		return isPalindrome(s, left + 1, right) || isPalindrome(s, left, right - 1);
 	}
 	return false;
 }
