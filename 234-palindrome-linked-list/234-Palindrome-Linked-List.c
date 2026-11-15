@@ -15,10 +15,7 @@ bool isPalindrome(Node* head) {
         stack[top++] = node->val;
         node = node->next;
     }
-    while (head) {
-        if (head->val != stack[--top])
-            return false;
+    while (head && head->val == stack[--top])
         head = head->next;
-    }
-    return true;
+    return head == NULL;
 }
