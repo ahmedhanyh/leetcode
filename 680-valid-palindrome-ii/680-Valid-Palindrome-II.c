@@ -1,8 +1,7 @@
 bool isPalindrome(char *s, int l, int r) {
     while (l < r && s[l] == s[r])
 			l++, r--;
-    if (l >= r) return true;
-    return false;
+    return l >= r;
 }
 
 bool validPalindrome(char *s) {
