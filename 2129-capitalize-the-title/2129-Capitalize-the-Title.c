@@ -1,21 +1,17 @@
-char* toLowerCase(char* s) {
-    char* t = s;
-    while (*t && *t != ' ') {
-        if (*t >= 'A' && *t <= 'Z')
-            *t = *t - 'A' + 'a';
-        t++;
+void toLowerCase(char* s) {
+    while (*s && *s != ' ') {
+        *s = tolower(*s);
+        s++;
     }
-    return s;
 }
 
 char* capitalizeTitle(char* title) {
     char* start, *end;
     start = end = title;
-    while (*end) {
+    while (true) {
         while (*end && *end != ' ') end++;
         if (end - start > 2) {
-            if (*start >= 'a' && *start <= 'z')
-                *start = *start - 'a' + 'A';
+            *start = toupper(*start);
             toLowerCase(start + 1);
         } else {
             toLowerCase(start);
