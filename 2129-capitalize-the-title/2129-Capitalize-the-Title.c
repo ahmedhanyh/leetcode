@@ -8,7 +8,7 @@ void toLowerCase(char* s) {
 char* capitalizeTitle(char* title) {
     char* start, *end;
     start = end = title;
-    while (true) {
+    while (*end) {
         while (*end && *end != ' ') end++;
         if (end - start > 2) {
             *start = toupper(*start);
@@ -16,8 +16,7 @@ char* capitalizeTitle(char* title) {
         } else {
             toLowerCase(start);
         }
-        if (!*end) break;
-        end++;
+        end += (*end == ' ');
         start = end;
     }
     return title;
