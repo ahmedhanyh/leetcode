@@ -1,26 +1,13 @@
-bool allUppercase(char *s) {
-    while (*s) {
-        if (islower(*s))
-            return false;
-        s++;
-    }
-    return true;
-}
-
-bool allLowercase(char *s) {
-    while (*s) {
-        if (isupper(*s))
-            return false;
-        s++;
-    }
-    return true;
-}
-
 bool detectCapitalUse(char* word) {
-    if (isupper(word[0])) {
-        return allUppercase(word + 1) || allLowercase(word + 1);
-    } else {
-        return allLowercase(word + 1);
+    int length = strlen(word), count = 0;
+    for (int i = 0; i < length; i++) {
+        if (isupper(word[i]))
+            count++;
     }
-    return true;
+    if (count == 0 || count == length) {
+        return true;
+    } else if (count == 1 && isupper(word[0])) {
+        return true;
+    }
+    return false;
 }
