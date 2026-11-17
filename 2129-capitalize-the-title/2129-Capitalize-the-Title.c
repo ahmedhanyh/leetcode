@@ -1,23 +1,14 @@
-void toLowerCase(char* s) {
-    while (*s && *s != ' ') {
-        *s = tolower(*s);
-        s++;
-    }
-}
-
 char* capitalizeTitle(char* title) {
-    char* start, *end;
-    start = end = title;
-    while (*end) {
-        while (*end && *end != ' ') end++;
-        if (end - start > 2) {
-            *start = toupper(*start);
-            toLowerCase(start + 1);
+    int length = strlen(title);
+    for (int i = 0, j = 0; j <= length; j++) {
+        if (title[j] == '\0' || title[j] == ' ') {
+            if (j - i > 2) {
+                title[i] = toupper(title[i]);
+            }
+            i = j + 1;
         } else {
-            toLowerCase(start);
+            title[j] = tolower(title[j]);
         }
-        end += (*end == ' ');
-        start = end;
     }
     return title;
 }
