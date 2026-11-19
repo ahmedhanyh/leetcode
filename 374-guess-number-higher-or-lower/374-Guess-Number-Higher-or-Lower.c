@@ -6,22 +6,20 @@
  *               otherwise return 0
  * int guess(int num);
  */
-
 int guess(int num);
 
 int guessNumber(int n){
-    int low, myGuess, high;
-    low = 1;
-    high = n;
-    while (1) {
-        myGuess = ((high - low) / 2) + low;
-        // if guess is higher than pick
-        if (guess(myGuess) == -1)
-            high = myGuess - 1;
-        // else if guess is lower than pick
-        else if (guess(myGuess) == 1)
-            low = myGuess + 1;
-        else break;
+    int min = 1, max = n;
+    int myGuess = 0;
+	while (true) {
+        myGuess = min + (max - min) / 2;
+        if (guess(myGuess) < 0) {
+            max = myGuess;
+        } else if (guess(myGuess) > 0) {
+            min = myGuess + 1;
+        } else {
+            return myGuess;
+        }
     }
-    return myGuess;
+    return 1;
 }
