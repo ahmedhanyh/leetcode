@@ -2,17 +2,16 @@
 // bool isBadVersion(int version);
 
 int firstBadVersion(int n) {
-    unsigned low, mid, high, isBad, foundBadVersion;
+    unsigned low, mid, high;
     low = 1;
     high = n;
     while (low < high) {
         mid = (high + low) / 2;
-        isBad = isBadVersion(mid);
-        if (!isBad) {
-            low = mid + 1;
-        } else {
-            while (isBadVersion(mid)) mid--;
+        if (isBadVersion(mid)) {
+            while (isBadVersion(--mid));
             break;
+        } else {
+            low = mid + 1;
         }
     }
     return mid + 1;
