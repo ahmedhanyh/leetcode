@@ -14,12 +14,12 @@ int guessNumber(int n){
 	while (true) {
         myGuess = min + (max - min) / 2;
         if (guess(myGuess) < 0) {
-            max = myGuess;
+            max = myGuess - 1;
         } else if (guess(myGuess) > 0) {
             min = myGuess + 1;
         } else {
-            return myGuess;
+            break;
         }
     }
-    return 1;
+    return myGuess;
 }
