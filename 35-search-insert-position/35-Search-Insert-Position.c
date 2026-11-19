@@ -12,11 +12,6 @@ int searchInsert(int* nums, int numsSize, int target) {
             high = mid;
         }
     }
-
     mid = (low + high) / 2;
-    if (nums[mid] >= target) {
-        return mid;
-    } else {
-        return mid + 1;
-    }
+    return (target <= nums[mid]) ? mid : mid + 1;
 }
