@@ -42,4 +42,4 @@
 
 ---
 
-**My Solution:** [1346-Check-If-N-and-Its-Double-Exist.c](./1346-Check-If-N-and-Its-Double-Exist.c)
+**My Solution:** [1346-Check-If-N-and-Its-Double-Exist.py](./1346-Check-If-N-and-Its-Double-Exist.py)
