@@ -30,4 +30,4 @@
 
 ---
 
-**My Solution:** [771-Jewels-and-Stones.c](./771-Jewels-and-Stones.c)
+**My Solution:** [771-Jewels-and-Stones.py](./771-Jewels-and-Stones.py)
