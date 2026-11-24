@@ -11,8 +11,7 @@ char* toGoatLatin(char* sentence) {
             }
             else {
                 isVowel = 0;
-                firstConsonant = sentence[i];
-                i++;
+                firstConsonant = sentence[i++];
             }
         }
         if (sentence[i] == ' ' || sentence[i] == '\0') {
