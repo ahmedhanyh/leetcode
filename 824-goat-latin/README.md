@@ -52,4 +52,4 @@
 
 ---
 
-**My Solution:** [824-Goat-Latin.py](./824-Goat-Latin.py)
+**My Solution:** [824-Goat-Latin.c](./824-Goat-Latin.c)
