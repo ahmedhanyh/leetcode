@@ -1,31 +1,11 @@
 int singleRow(char *word) {
-    char firstRow[] = "qwertyuiop";
-    char secondRow[] = "asdfghjkl";
-    char thirdRow[] = "zxcvbnm";
-    int first = 0, second = 0, third = 0;
-
-    for (int i = 0; word[i]; i++) {
-        for (int j = 0; j < 10; j++) {
-            if (firstRow[j] == tolower(word[i])) {
-                first = 1;
-                break;
-            }
-        }
-        for (int j = 0; j < 9; j++) {
-            if (secondRow[j] == tolower(word[i])) {
-                second = 1;
-                break;
-            }
-        }
-        for (int j = 0; j < 7; j++) {
-            if (thirdRow[j] == tolower(word[i])) {
-                third = 1;
-                break;
-            }
-        }
+    int charToRow[] = { 2, 3, 3, 2, 1, 2, 2, 2, 1, 2, 2, 2, 3
+                      , 3, 1, 1, 1, 1, 2, 1, 1, 3, 1, 3, 1, 3 };
+    int rows[3] = { 0 };
+    for (int len = 0; word[len]; len++) {
+        rows[charToRow[tolower(word[len]) - 'a'] - 1] = 1;
     }
-
-    return first + second + third == 1;
+    return rows[0] + rows[1] + rows[2] == 1;
 }
 
 /**
