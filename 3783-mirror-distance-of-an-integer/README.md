@@ -70,4 +70,4 @@
 
 ---
 
-**My Solution:** [3783-Mirror-Distance-of-an-Integer.c](./3783-Mirror-Distance-of-an-Integer.c)
+**My Solution:** [3783-Mirror-Distance-of-an-Integer.py](./3783-Mirror-Distance-of-an-Integer.py)
