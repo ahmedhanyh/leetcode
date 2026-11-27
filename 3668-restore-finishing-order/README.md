@@ -54,4 +54,4 @@
 
 ---
 
-**My Solution:** [3668-Restore-Finishing-Order.py](./3668-Restore-Finishing-Order.py)
+**My Solution:** [3668-Restore-Finishing-Order.c](./3668-Restore-Finishing-Order.c)
