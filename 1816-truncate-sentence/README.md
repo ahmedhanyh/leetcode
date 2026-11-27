@@ -57,4 +57,4 @@ Hence, you should return &quot;What is the solution&quot;.</pre>
 
 ---
 
-**My Solution:** [1816-Truncate-Sentence.py](./1816-Truncate-Sentence.py)
+**My Solution:** [1816-Truncate-Sentence.c](./1816-Truncate-Sentence.c)
